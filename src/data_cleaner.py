@@ -18,7 +18,7 @@ class DataCleaner:
     can be tested independently. None of them rely on a trained model or
     on external services, which makes them good candidates for unit tests.
     """
-
+    
     def drop_invalid_rows(self, df: pd.DataFrame, cols: Iterable[str]) -> pd.DataFrame:
         """Return a copy of ``df`` without rows that have missing values.
 
