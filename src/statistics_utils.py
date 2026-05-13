@@ -18,7 +18,8 @@ class StatisticsUtils:
     error behaviour.
     """
 
-    def moving_average(self, arr: Sequence[float], window: int) -> np.ndarray:
+    @staticmethod
+    def moving_average(arr: Sequence[float], window: int) -> np.ndarray:
         """Compute a simple moving average over a one-dimensional sequence.
 
         Parameters
@@ -53,7 +54,8 @@ class StatisticsUtils:
         kernel = np.ones(window, dtype=float) / window
         return np.convolve(arr, kernel, mode="valid")
 
-    def zscore(self, arr: Sequence[float]) -> np.ndarray:
+    @staticmethod
+    def zscore(arr: Sequence[float]) -> np.ndarray:
         """Return the z-score of each value in a numeric sequence.
 
         The z-score is defined as ``(x - mean) / std``. This method uses
@@ -84,7 +86,8 @@ class StatisticsUtils:
         mean = arr.mean()
         return (arr - mean) / std
 
-    def min_max_scale(self, arr: Sequence[float]) -> np.ndarray:
+    @staticmethod
+    def min_max_scale(arr: Sequence[float]) -> np.ndarray:
         """Scale a numeric sequence to the [0, 1] range.
 
         The transformation is ``(x - min) / (max - min)``. All operations
